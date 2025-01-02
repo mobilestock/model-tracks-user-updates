@@ -1,0 +1,35 @@
+{
+  "name": "mobilestock/model-tracks-user-updates",
+  "description": "model-tracks-user-updates is a library that updates the 'updated_by_user' column with the corresponding user id. Internally it uses the model triggers to update the column with the id of the logged user.",
+  "type": "library",
+  "authors": [
+    {
+      "name": "MobileStock",
+      "email": "fabio@mobilestock.com.br"
+    }
+  ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Mobilestock\\ModelTracksUserUpdates\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "illuminate/database": "^11.0",
+    "illuminate/support": "^11.0"
+  },
+  "require-dev": {
+    "pestphp/pest": "^3.7",
+    "orchestra/testbench": "^9.9"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
