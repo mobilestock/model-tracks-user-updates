@@ -1,0 +1,8 @@
+services:
+  model-tracks-user-updates:
+    extends:
+      file: docker-compose.base.yml
+      service: pest-base
+    volumes:
+      - './packages/model-tracks-user-updates:/model-tracks-user-updates'
+    working_dir: /model-tracks-user-updates
