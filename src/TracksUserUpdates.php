@@ -15,6 +15,7 @@ trait TracksUserUpdates
 
     public function updateUserId(Model $model): void
     {
-        $model->updated_by_user ??= Auth::id();
+        $user = Auth::user()->userInfo();
+        $model->updated_by_user ??= $user['id'];
     }
 }
