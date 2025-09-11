@@ -4,7 +4,6 @@ namespace Mobilestock\ModelTracksUserUpdates;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use RuntimeException;
 
 trait TracksUserUpdates
 {
@@ -16,12 +15,6 @@ trait TracksUserUpdates
 
     public function updateUserId(Model $model): void
     {
-        $user = Auth::user();
-        if (empty($user)) {
-            throw new RuntimeException('Nenhum usuário autenticado encontrado');
-        }
-
-        $userId = $user->id ?? $user->userInfo()['id'];
-        $model->updated_by_user ??= $userId;
+        $model->updated_by_user ??= Auth::id();
     }
 }
